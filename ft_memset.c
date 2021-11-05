@@ -6,9 +6,11 @@
 /*   By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:25:23 by mkhalid           #+#    #+#             */
-/*   Updated: 2021/11/03 17:35:15 by mkhalid          ###   ########.fr       */
+/*   Updated: 2021/11/05 11:26:48 by mkhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	*ft_memset(void *b, int c, size_t len)
 {
