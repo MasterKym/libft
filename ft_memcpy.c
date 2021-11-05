@@ -6,13 +6,11 @@
 /*   By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:35:34 by mkhalid           #+#    #+#             */
-/*   Updated: 2021/11/05 10:26:23 by mkhalid          ###   ########.fr       */
+/*   Updated: 2021/11/05 11:38:18 by mkhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void    *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
@@ -27,6 +25,9 @@ void    *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 	}
     return (dst);
 }
+
+#include <stdio.h>
+#include <string.h>
 
 int main()
 {
