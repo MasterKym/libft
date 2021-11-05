@@ -6,7 +6,7 @@
 /*   By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 14:52:50 by mkhalid           #+#    #+#             */
-/*   Updated: 2021/11/03 15:02:56 by mkhalid          ###   ########.fr       */
+/*   Updated: 2021/11/05 11:26:27 by mkhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	isalnum(int c)
 {
-	if(ft_isdigit(c) || ft_islpha(c))
+	if(ft_isdigit(c) || ft_isalpha(c))
 		return (1);
 	return (0);
 }
