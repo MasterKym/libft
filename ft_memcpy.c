@@ -6,38 +6,26 @@
 /*   By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:35:34 by mkhalid           #+#    #+#             */
-/*   Updated: 2021/11/05 11:38:18 by mkhalid          ###   ########.fr       */
+/*   Updated: 2021/11/06 15:55:30 by mkhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void    *ft_memcpy(void *dst, const void *src, size_t n)
 {
-	const int	*newsrc;
+	const char	*newsrc;
+	char	*newdst;
 
-	newsrc = (const int *)src;
+	if (!dst && ! src)
+		return (dst);
+	newsrc = (const char *)src;
+	newdst = (char *)dst;
 	while(n--)
 	{
-		*(char *)dst = *newsrc;
+		*newdst = *newsrc;
 		newsrc++;
-		dst++;
+		newdst++;
 	}
     return (dst);
-}
-
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-    char src[] = "memcpyy can be very useful....!";
-    char src1[] = "memcpyy can be very useful....!";
-
-    ft_memcpy(src+20, src+15, 11);
-    memcpy(src1+20, src1+15, 11);
-    printf("%s\n", src);
-    printf("%s", src1);
-
-    return 0;
 }

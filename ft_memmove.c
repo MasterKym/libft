@@ -6,7 +6,7 @@
 /*   By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 09:36:51 by mkhalid           #+#    #+#             */
-/*   Updated: 2021/11/05 11:37:13 by mkhalid          ###   ########.fr       */
+/*   Updated: 2021/11/06 16:05:26 by mkhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,22 +15,19 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*s;
 	char	*d;
-	size_t	i;
+
+	if(!dst && !src)
+		return (dst);
 
 	s = (char *)src;
 	d = (char *)dst;
 
-	if(s + len >= d)
+	if(s < d)
 	{
-		i = len;
-		while(i--)
-			d[i] = s[i];
+		while(len--)
+			d[len] = s[len];
 	}
 	else
-	{
-		i = 0;
-		while(i < len)
-			d[i] = s[i];
-	}
+		ft_memcpy(d, s, len);
 	return (dst);
 }
