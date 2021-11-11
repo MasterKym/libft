@@ -6,7 +6,7 @@
 #    By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 11:20:19 by mkhalid           #+#    #+#              #
-#    Updated: 2021/11/09 15:37:04 by mkhalid          ###   ########.fr        #
+#    Updated: 2021/11/10 12:23:53 by mkhalid          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,17 +51,30 @@ SRCS = ft_isalpha.c \
 	   ft_putendl_fd.c \
 	   ft_putnbr_fd.c
 
+# THESE NEED TO BE REMOVED
 
-OBJS = $(SRCS:%.c=%.o)
+SRCS_BNS = ft_lstnew.c
 
-$(NAME):
-	$(CC) $(CFLAGS) -c $(SRCS) -I libft.h/
+
+OBJS = $(SRCS:.c=.o)
+OBJS_BNS = $(SRCS_BNS:.c=.o)
+
+INC = libft.h
+
+$(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+
+%.o: %.c $(INC)
+	$(CC) $(CFLAGS) -c $< -o $@ 
 
 all: $(NAME)
 
+bonus: $(BONUS)
+	$(CC) $(CFLAGS) -c $(SRCS) $(SRCS_BNS) $(INC)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(OBJS_BNS)
+	
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJS_BNS)
 
 fclean: clean
 	rm -f $(NAME)
