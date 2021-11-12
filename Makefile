@@ -6,7 +6,7 @@
 #    By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 11:20:19 by mkhalid           #+#    #+#              #
-#    Updated: 2021/11/10 12:23:53 by mkhalid          ###   ########.fr        #
+#    Updated: 2021/11/12 01:37:54 by mkhalid          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,15 @@ SRCS = ft_isalpha.c \
 
 # THESE NEED TO BE REMOVED
 
-SRCS_BNS = ft_lstnew.c
+SRCS_BNS = ft_lstnew.c \
+		   ft_lstadd_front.c \
+		   ft_lstsize.c \
+		   ft_lstlast.c \
+		   ft_lstadd_back.c \
+		   ft_lstdelone.c \
+		   ft_lstclear.c \
+		   ft_lstiter.c \
+		   ft_lstmap.c
 
 
 OBJS = $(SRCS:.c=.o)
