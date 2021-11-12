@@ -6,26 +6,26 @@
 /*   By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:35:34 by mkhalid           #+#    #+#             */
-/*   Updated: 2021/11/06 15:55:30 by mkhalid          ###   ########.fr       */
+/*   Updated: 2021/11/12 20:02:41 by mkhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	const char	*newsrc;
-	char	*newdst;
+	char		*newdst;
 
 	if (!dst && ! src)
 		return (dst);
 	newsrc = (const char *)src;
 	newdst = (char *)dst;
-	while(n--)
+	while (n--)
 	{
 		*newdst = *newsrc;
 		newsrc++;
 		newdst++;
 	}
-    return (dst);
+	return (dst);
 }

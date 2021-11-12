@@ -6,7 +6,7 @@
 /*   By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 14:14:56 by mkhalid           #+#    #+#             */
-/*   Updated: 2021/11/09 14:37:28 by mkhalid          ###   ########.fr       */
+/*   Updated: 2021/11/12 20:04:44 by mkhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	size_t	size;
+	size_t			size;
 	unsigned int	i;
 
-	if(!s)
-		return;
+	if (!s)
+		return ;
 	size = ft_strlen(s);
 	i = 0;
-	while(i < size)
+	while (i < size)
 	{
 		f(i, &s[i]);
 		i++;

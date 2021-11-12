@@ -6,33 +6,43 @@
 /*   By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 15:31:36 by mkhalid           #+#    #+#             */
-/*   Updated: 2021/11/09 15:48:08 by mkhalid          ###   ########.fr       */
+/*   Updated: 2021/11/12 19:48:15 by mkhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	_abs(int n)
+static void	_ft_putnbr(int fd, int nb)
 {
-	if(n > 0)
-		return (n);
-	return (-n);
+	int	c;
+
+	if (nb < 10)
+	{
+		c = nb + '0';
+		write(fd, &c, 1);
+	}
+	else
+	{
+		_ft_putnbr(fd, nb / 10);
+		_ft_putnbr(fd, nb % 10);
+	}
 }
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if(n < 0)
-		ft_putchar_fd('-', fd);
-	if(n < 10 && n >= 0)
-	{
-		ft_putchar_fd((char) (n + 48), fd);
-		return;
-	}
-	ft_putnbr_fd(_abs(n / 10), fd);
-	ft_putnbr_fd(_abs(n % 10), fd);
-}
+	int	min;
 
-int	main()
-{
-	ft_putnbr_fd(0, 1);
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		min = 1 << (sizeof(int) * 8 - 1);
+		if (min == n)
+		{
+			_ft_putnbr(fd, n / 10 * -1);
+			_ft_putnbr(fd, n % 10 * -1);
+			return ;
+		}
+		n = n * -1;
+	}
+	_ft_putnbr(fd, n);
 }

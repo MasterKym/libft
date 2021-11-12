@@ -6,24 +6,24 @@
 /*   By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:51:46 by mkhalid           #+#    #+#             */
-/*   Updated: 2021/11/06 16:53:36 by mkhalid          ###   ########.fr       */
+/*   Updated: 2021/11/12 20:04:21 by mkhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char 	*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	char 	cc;
+	char	cc;
 	char	*ss;
 
 	cc = (char)c;
 	ss = (char *)s;
 	while (*ss)
 	{
-		if(*ss == cc)
+		if (*ss == cc)
 			return (ss);
 		ss++;
 	}
-	if(cc == '\0')
+	if (cc == '\0')
 		return (ss);
 	return (0);
 }
