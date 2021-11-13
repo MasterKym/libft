@@ -6,32 +6,35 @@
 /*   By: mkhalid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 16:51:54 by mkhalid           #+#    #+#             */
-/*   Updated: 2021/11/12 20:09:48 by mkhalid          ###   ########.fr       */
+/*   Updated: 2021/11/13 13:14:55 by mkhalid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	min(int a, int b)
+{
+	if (a > b)
+		return (b);
+	return (a);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	int				size;
 	char			*ret;
-	int				i;
 	unsigned int	slen;
 
 	if (!s)
 		return (NULL);
-	ret = malloc((len + 1) * sizeof(char));
 	slen = (unsigned int)ft_strlen(s);
 	if (start >= slen)
-	{
-		ret[0] = '\0';
-		return (ret);
-	}
-	if (ret == NULL)
+		size = 0;
+	else
+		size = min(slen - start, len);
+	ret = malloc((size + 1) * sizeof(char));
+	if (!ret)
 		return (0);
-	i = 0;
-	while (len--)
-		ret[i++] = s[start++];
-	ret[i] = '\0';
+	ft_strlcpy(ret, s + start, size + 1);
 	return (ret);
 }
